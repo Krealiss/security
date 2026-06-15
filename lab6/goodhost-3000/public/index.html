@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureMail Pro</title>
+
+  <!-- styles from CDN (port 6000) -->
+  <link rel="stylesheet" href="http://localhost:6000/theme.css" />
+
+  <!-- local layout (same-origin, survives strict CSP) -->
+  <link rel="stylesheet" href="/local.css" />
+</head>
+<body>
+  <header>
+    <!-- logo from CDN (port 6000) -->
+    <span class="logo-container">
+      <img src="http://localhost:6000/logo.png" alt="SecureMail Pro" />
+    </span>
+    <strong>SecureMail&nbsp;Pro</strong>
+    <span class="spacer"></span>
+    <!-- login form (Lab 4); toggled by main.js -->
+    <span id="login-form">
+      <input id="login-user" placeholder="username" />
+      <input id="login-pass" type="password" placeholder="password" />
+      <button id="login-btn">Login</button>
+    </span>
+    <span id="auth-status"></span>
+    <button id="logout-btn" style="display:none">Logout</button>
+    <span class="user-box">Користувач: <span id="username">John Smith</span></span>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar"><!-- email list injected by main.js --></aside>
+    <main id="main">
+      <div class="empty">← Оберіть лист зі списку ліворуч</div>
+    </main>
+  </div>
+
+  <!-- app logic -->
+  <script src="main.js"></script>
+
+  <!-- bridge: three external scripts -->
+  <!--REACT_SCRIPT--> <!-- React lib (CDN); tag injected by server per mode -->
+  <script src="http://localhost:4000/support.js"></script>     <!-- support widget -->
+  <script src="http://localhost:5000/weather.js"></script>     <!-- weather widget (attacker) -->
+</body>
+</html>

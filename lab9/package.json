@@ -1,0 +1,14 @@
+{
+  "name": "camp-booking",
+  "version": "1.0.0",
+  "description": "Lab 9 - Camp Booking Validator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "vulnerable": "MODE=vulnerable node server.js",
+    "validated": "MODE=validated node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

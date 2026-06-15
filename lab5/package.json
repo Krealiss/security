@@ -1,0 +1,19 @@
+{
+  "name": "webmail-security-lab",
+  "version": "1.0.0",
+  "description": "Лабораторна 1: Основи безпеки браузера — багатосерверна екосистема WebMail",
+  "private": true,
+  "scripts": {
+    "good": "node goodhost-3000/server.js",
+    "cdn": "node statichost-6000/server.js",
+    "trust": "node trustco-4000/server.js",
+    "weather": "node weatherapp-5000/server.js",
+    "weather:breach": "node weatherapp-5000/server.js --mode breach1",
+    "proxy": "node proxy-8080/server.js",
+    "proxy:breach": "node proxy-8080/server.js --mode breach"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

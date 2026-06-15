@@ -1,0 +1,21 @@
+{
+  "name": "camp-booking",
+  "version": "1.0.0",
+  "description": "Lab 9 - Camp Booking Validator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "vulnerable": "MODE=vulnerable node server.js",
+    "validated": "MODE=validated node server.js",
+    "validated-sql": "MODE=validated-sql node server.js",
+    "clickjack": "MODE=clickjack-vulnerable PORT=3000 node server.js",
+    "clickjack:csp": "MODE=clickjack-csp PORT=3000 node server.js",
+    "clickjack:csp-self": "MODE=clickjack-csp-self PORT=3000 node server.js",
+    "clickjack:xfo": "MODE=clickjack-xfo PORT=3000 node server.js",
+    "attacker": "node attacker/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sql.js": "*"
+  }
+}

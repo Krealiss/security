@@ -1,0 +1,19 @@
+/* theme.css - shared styles served from CDN (port 6000) */
+
+/* #username: bold blue text */
+#username {
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+/* .logo-container: logo image sizing */
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+}
+.logo-container img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}

@@ -1,0 +1,4 @@
+node_modules/
+
+# TLS private key - never commit to a repository
+goodhost-3000/key.pem
