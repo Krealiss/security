@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureMail Pro</title>
+
+  <!-- Завдання 3.2: стилі підвантажуються з CDN на порту 6000 -->
+  <link rel="stylesheet" href="http://localhost:6000/theme.css" />
+
+  <style>
+    /* Локальний каркас сторінки (стилі #username і .logo-container — з CDN) */
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .layout { display: flex; height: calc(100vh - 67px); }
+    #sidebar {
+      width: 320px;
+      background: #ffffff;
+      border-right: 1px solid #e5e7eb;
+      overflow-y: auto;
+    }
+    .email-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+    }
+    .email-item:hover { background: #f9fafb; }
+    .email-item.active { background: #eef2ff; }
+    .email-item .from { font-weight: 600; font-size: 14px; }
+    .email-item .subj { font-size: 13px; color: #6b7280; margin-top: 2px; }
+    #main { flex: 1; padding: 28px 36px; overflow-y: auto; }
+    #main h2 { margin-top: 0; }
+    .meta { color: #6b7280; font-size: 14px; margin-bottom: 18px; }
+    .empty { color: #9ca3af; margin-top: 80px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Логотип з CDN (порт 6000); клас .logo-container стилізує CDN -->
+    <span class="logo-container">
+      <img src="http://localhost:6000/logo.png" alt="SecureMail Pro" />
+    </span>
+    <strong>SecureMail&nbsp;Pro</strong>
+    <div style="margin-left:auto;">
+      Користувач: <span id="username">John Smith</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar"><!-- список листів додає main.js --></aside>
+    <main id="main">
+      <div class="empty">← Оберіть лист зі списку ліворуч</div>
+    </main>
+  </div>
+
+  <!-- 3.1 Власна логіка пошти -->
+  <script src="main.js"></script>
+
+  <!-- 3.2 "Міст": три зовнішні скрипти з різних джерел -->
+  <script src="http://localhost:6000/react-mock.js"></script> <!-- бібліотека (CDN) -->
+  <script src="http://localhost:4000/support.js"></script>     <!-- віджет підтримки -->
+  <script src="http://localhost:5000/weather.js"></script>     <!-- віджет погоди (майбутній атакувальник) -->
+</body>
+</html>

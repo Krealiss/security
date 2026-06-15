@@ -1,0 +1,19 @@
+/* theme.css — спільні стилі, що віддаються з CDN (порт 6000) */
+
+/* Стиль для ID #username: жирний синій текст */
+#username {
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+/* Стиль для класу .logo-container: задає розміри зображення логотипа */
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+}
+.logo-container img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
